@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gurucool/components/sidebar_row.dart';
-import 'package:gurucool/constants.dart';
-import 'package:gurucool/model/sidebar.dart';
-import 'package:gurucool/screens/sidebar_screen.dart';
+import 'package:gurucool/model/course.dart';
+
+import 'components/cards/recent_course_card.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          body: Container(),
+          body: SafeArea(
+            child: Container(
+              child: RecentCourseCard(
+                course: recentCourses[1],
+              ),
+            ),
+          ),
         ));
   }
 }
