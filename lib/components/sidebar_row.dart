@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gurucool/constants.dart';
 import 'package:gurucool/model/sidebar.dart';
 
 class SidebarRow extends StatelessWidget {
@@ -22,11 +23,7 @@ class SidebarRow extends StatelessWidget {
         Container(
           child: Text(
             item.title,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w800,
-              color: Color(0xFF242629),
-            ),
+            style: kCalloutLabelStyle,
           ),
         ),
       ],
