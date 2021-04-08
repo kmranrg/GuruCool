@@ -2,7 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gurucool/components/cards/completed_courses_card.dart';
+import 'package:gurucool/components/certificate_viewer.dart';
+import 'package:gurucool/components/lists/completed_courses_list.dart';
 import 'package:gurucool/constants.dart';
+import 'package:gurucool/model/course.dart';
 
 class ProfileScreen extends StatelessWidget {
   final List<String> badges = [
@@ -187,7 +191,8 @@ class ProfileScreen extends StatelessWidget {
                         itemCount: badges.length,
                         itemBuilder: (context, index) {
                           return Container(
-                            padding: EdgeInsets.only(left: 20.0, right: index != 3 ? 0.0 : 20.0),
+                            padding: EdgeInsets.only(
+                                left: 20.0, right: index != 3 ? 0.0 : 20.0),
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
@@ -205,6 +210,68 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  top: 32.0, left: 20.0, right: 20.0, bottom: 12.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Certificates",
+                        style: kHeadlineLabelStyle,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "See all",
+                            style: kSearchPlaceholderStyle,
+                          ),
+                          Icon(
+                            Icons.chevron_right,
+                            color: kSecondaryLabelColor,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            CertificateViewer(),
+            Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 12.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Completed Courses",
+                        style: kHeadlineLabelStyle,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "See all",
+                            style: kSearchPlaceholderStyle,
+                          ),
+                          Icon(
+                            Icons.chevron_right,
+                            color: kSecondaryLabelColor,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            CompletedCoursesList(),
+            SizedBox(
+              height: 28.0,
             ),
           ],
         ),
