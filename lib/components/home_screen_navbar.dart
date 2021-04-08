@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gurucool/components/searchfield_widget.dart';
 import 'package:gurucool/components/sidebar_button.dart';
-
+import 'package:gurucool/screens/profile_screen.dart';
 import '../constants.dart';
 
 class HomeScreenNavBar extends StatelessWidget {
-
   HomeScreenNavBar({@required this.triggerAnimation});
 
   final Function triggerAnimation;
@@ -17,7 +16,9 @@ class HomeScreenNavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SidebarButton(triggerAnimation: triggerAnimation,),
+          SidebarButton(
+            triggerAnimation: triggerAnimation,
+          ),
           SearchFieldWidget(),
           Icon(
             Icons.notifications,
@@ -26,9 +27,15 @@ class HomeScreenNavBar extends StatelessWidget {
           SizedBox(
             width: 16.0,
           ),
-          CircleAvatar(
-            radius: 18.0,
-            backgroundImage: AssetImage('asset/images/profile.jpg'),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ProfileScreen()));
+            },
+            child: CircleAvatar(
+              radius: 18.0,
+              backgroundImage: AssetImage('asset/images/profile.jpg'),
+            ),
           )
         ],
       ),
