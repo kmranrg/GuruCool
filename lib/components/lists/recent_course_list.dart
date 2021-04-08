@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gurucool/components/cards/recent_course_card.dart';
 import 'package:gurucool/model/course.dart';
+import 'package:gurucool/screens/course_screen.dart';
 
 class RecentCourseList extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _RecentCourseListState extends State<RecentCourseList> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: recentCourses.map(
-            (course) {
+        (course) {
           var index = recentCourses.indexOf(course);
           return Container(
             width: 7.0,
@@ -23,7 +24,8 @@ class _RecentCourseListState extends State<RecentCourseList> {
             margin: EdgeInsets.symmetric(horizontal: 6.0),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: currentPage == index ? Color(0xFF0971FE) : Color(0xFFA6AEBD),
+              color:
+                  currentPage == index ? Color(0xFF0971FE) : Color(0xFFA6AEBD),
             ),
           );
         },
@@ -40,10 +42,21 @@ class _RecentCourseListState extends State<RecentCourseList> {
           width: double.infinity,
           child: PageView.builder(
             itemBuilder: (context, index) {
-              return Opacity(
-                opacity: currentPage == index ? 1.0 : 0.5,
-                child: RecentCourseCard(
-                  course: recentCourses[index],
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CourseScreen(course: recentCourses[index],),
+                      fullscreenDialog: true,
+                    ),
+                  );
+                },
+                child: Opacity(
+                  opacity: currentPage == index ? 1.0 : 0.5,
+                  child: RecentCourseCard(
+                    course: recentCourses[index],
+                  ),
                 ),
               );
             },

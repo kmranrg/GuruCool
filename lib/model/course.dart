@@ -95,7 +95,7 @@ var exploreCourses = [
 // Continue Watching Courses
 var continueWatchingCourses = [
   Course(
-    courseTitle: "React for Designers",
+    courseTitle: "React for\nDesigners",
     courseSubtitle: "SVG Animations",
     background: LinearGradient(
       begin: Alignment.topLeft,
@@ -108,7 +108,7 @@ var continueWatchingCourses = [
     illustration: 'illustration-06.png',
   ),
   Course(
-    courseTitle: "Animating in Principle",
+    courseTitle: "Animation\nPrinciple",
     courseSubtitle: "Multiple Scrolling",
     background: LinearGradient(
       begin: Alignment.topLeft,
