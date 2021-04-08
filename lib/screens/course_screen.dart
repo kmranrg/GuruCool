@@ -1,11 +1,10 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gurucool/model/course.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-
 import '../constants.dart';
+import 'course_sections_screen.dart';
 
 class CourseScreen extends StatefulWidget {
   CourseScreen({this.course});
@@ -17,7 +16,6 @@ class CourseScreen extends StatefulWidget {
 }
 
 class _CourseScreenState extends State<CourseScreen> {
-
   Widget indicators() {
     List<Widget> indicators = [];
 
@@ -68,7 +66,7 @@ class _CourseScreenState extends State<CourseScreen> {
           ],
           minHeight: 0.0,
           maxHeight: MediaQuery.of(context).size.height * 0.95,
-          panel: Container(),
+          panel: CourseSectionsScreen(),
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -150,8 +148,8 @@ class _CourseScreenState extends State<CourseScreen> {
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(12.0),
-                                          color:
-                                              kPrimaryLabelColor.withOpacity(0.8),
+                                          color: kPrimaryLabelColor
+                                              .withOpacity(0.8),
                                         ),
                                         child: Icon(
                                           Icons.close,
@@ -317,7 +315,8 @@ class _CourseScreenState extends State<CourseScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 28.0, vertical: 24.0),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 28.0, vertical: 24.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
