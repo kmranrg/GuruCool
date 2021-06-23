@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kmranrg.gurucool">
    <application
-        android:label="GuruCool"
+        android:label="SmartGurucool"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

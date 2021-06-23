@@ -1,11 +1,11 @@
 {
-    "name": "gurucool",
-    "short_name": "gurucool",
+    "name": "SmartGurucool",
+    "short_name": "SmartGurucool",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "SmartGurucool: where learning is fun",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
