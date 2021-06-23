@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gurucool/model/course.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:universal_platform/universal_platform.dart';
 import '../constants.dart';
 import 'course_sections_screen.dart';
 
@@ -224,7 +225,7 @@ class _CourseScreenState extends State<CourseScreen> {
                                 padding: EdgeInsets.all(4.0),
                                 child: CircleAvatar(
                                   child: Icon(
-                                    Platform.isAndroid
+                                    UniversalPlatform.isAndroid
                                         ? Icons.people
                                         : CupertinoIcons.group_solid,
                                     color: Colors.white,
@@ -272,7 +273,7 @@ class _CourseScreenState extends State<CourseScreen> {
                                 padding: EdgeInsets.all(4.0),
                                 child: CircleAvatar(
                                   child: Icon(
-                                    Platform.isAndroid
+                                    UniversalPlatform.isAndroid
                                         ? Icons.format_quote
                                         : CupertinoIcons.news_solid,
                                     color: Colors.white,
