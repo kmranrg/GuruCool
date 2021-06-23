@@ -7,6 +7,7 @@ import 'package:gurucool/components/certificate_viewer.dart';
 import 'package:gurucool/components/lists/completed_courses_list.dart';
 import 'package:gurucool/constants.dart';
 import 'package:gurucool/model/course.dart';
+import 'package:universal_platform/universal_platform.dart';
 
 class ProfileScreen extends StatelessWidget {
   final List<String> badges = [
@@ -88,7 +89,7 @@ class ProfileScreen extends StatelessWidget {
                               ],
                             ),
                             child: Icon(
-                              Platform.isAndroid
+                              UniversalPlatform.isAndroid
                                   ? Icons.settings
                                   : CupertinoIcons.settings_solid,
                               color: kSecondaryLabelColor,
